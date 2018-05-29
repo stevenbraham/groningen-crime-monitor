@@ -1,0 +1,20 @@
+{
+  "name": "hanze-crime-monitor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/stevenbraham/hanze-crime-monitor",
+  "author": "Steven Braham <steven@braham.biz>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^6.0.0-18",
+    "laravel-elixir-html-minify": "^1.0.1",
+    "laravel-elixir-webpack-official": "^1.0.10"
+  }
+}

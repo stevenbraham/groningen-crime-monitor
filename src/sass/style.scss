@@ -1,0 +1,25 @@
+$primary: #EE7B00;
+$info: #2176FF;
+$danger: #E71D36;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+.hanze-crime-monitor {
+  font-family: "Neue Helvetica W02", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  h1, h2, h3 {
+    font-weight: 200;
+
+    color: $primary;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    .navbar-brand {
+      background: url("../images/hanze-logo.svg") no-repeat center center;
+      background-size: contain;
+      min-width: 5rem;
+      min-height: 3rem;
+    }
+  }
+}
