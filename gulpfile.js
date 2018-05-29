@@ -1,5 +1,6 @@
 const elixir = require('laravel-elixir');
 require('laravel-elixir-html-minify');
+require('laravel-elixir-vue-2');
 
 elixir.config.assetsPath = 'src';
 elixir.config.publicPath = 'dist';
