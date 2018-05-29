@@ -1,26 +1,34 @@
 <template>
-    <table class="table table-striped">
+    <table class="table table-striped crime-table">
         <thead>
         <tr>
-            <th>Neighbourhood</th>
+            <th>
+                Neighbourhood
+            </th>
             <th>
                 Income
             </th>
-            <th>
-                Number of {{crimeMode}} thefts
+            <th v-if="crimeMode == 'car'">
+                Number of car thefts
+            </th>
+            <th v-if="crimeMode == 'bike'">
+                Number of bike thefts
             </th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="(row,index) in crimeStats">
             <td>
-                {{row.label}}
+                {{row.name}}
             </td>
             <td>
-                {{row.income}}
+                €{{row.income.toLocaleString("en-us")}}
             </td>
-            <td>
-                {{row.crimes}}
+            <td v-if="crimeMode == 'car'">
+                {{row.carThefts}}
+            </td>
+            <td v-if="crimeMode == 'bike'">
+                {{row.bikeThefts}}
             </td>
         </tr>
         </tbody>
@@ -28,34 +36,6 @@
 </template>
 <script type="text/babel">
     export default {
-        store: ['crimeMode'],
-        data() {
-            return {
-                crimeStats: []
-            }
-        },
-        mounted: function () {
-            this.setStats();
-        },
-        watch: {
-            crimeMode: function () {
-                this.setStats();
-            }
-        },
-        methods: {
-            setStats: function () {
-                this.crimeStats = [];
-                window.buurtMonitorData.forEach((row) => {
-
-                    let crimeIndex = (this.crimeMode == "car" ? 2 : 3);
-                    console.log(crimeIndex);
-                    this.crimeStats.push({
-                        label: row[0],
-                        income: row[1],
-                        crimes: row[crimeIndex]
-                    });
-                });
-            }
-        }
+        store: ['crimeMode', 'crimeStats'],
     }
 </script>

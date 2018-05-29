@@ -5,6 +5,7 @@ $warning: #E1B07E;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 .hanze-crime-monitor {
+  background: #ffffff !important;
   font-family: "Neue Helvetica W02", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 
   .navbar {
@@ -15,4 +16,11 @@ $warning: #E1B07E;
       min-height: 3rem;
     }
   }
+
+  .crime-table {
+    th, td {
+      width: percentage(1/4);
+    }
+  }
+
 }
