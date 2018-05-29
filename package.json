@@ -9,12 +9,16 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.3"
+    "papaparse": "^4.4.0",
+    "popper.js": "^1.14.3",
+    "vue": "^2.5.16"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-18",
     "laravel-elixir-html-minify": "^1.0.1",
+    "laravel-elixir-vue-2": "^0.3.0",
+    "laravel-elixir-vueify": "^2.0.0",
     "laravel-elixir-webpack-official": "^1.0.10"
   }
 }

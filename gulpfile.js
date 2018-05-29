@@ -11,6 +11,7 @@ elixir(function (mix) {
     mix.sass('style.scss');
     mix.copy('src/index.html', 'dist');
     mix.copy('src/images', 'dist/images');
+    mix.copy('src/datasets', 'dist/datasets');
     if (elixir.config.production) {
         mix.html('dist/**/*.html', 'dist', 'dist');
     }

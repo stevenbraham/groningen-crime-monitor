@@ -1,18 +1,11 @@
-$primary: #EE7B00;
-$info: #2176FF;
-$danger: #E71D36;
+$primary: #070607;
+$info: #62466B;
+$danger: #FF4365;
+$warning: #E1B07E;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 .hanze-crime-monitor {
   font-family: "Neue Helvetica W02", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  h1, h2, h3 {
-    font-weight: 200;
-
-    color: $primary;
-  }
-  h1 {
-    font-size: 2rem;
-  }
 
   .navbar {
     .navbar-brand {
