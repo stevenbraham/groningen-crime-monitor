@@ -1,4 +1,5 @@
 import $ from "jquery";
+import _ from "lodash";
 import "popper.js";
 import "bootstrap";
 import CSVParser from "papaparse";
@@ -41,12 +42,35 @@ $.get("../datasets/data.csv", (csvContents) => {
 });
 
 function setupVue(crimeStats) {
+
+    //_ is from Lodash, a javascript utility function library
+    let totalStats = {
+        income: _.sumBy(crimeStats, 'income'),
+        carThefts: _.sumBy(crimeStats, 'carThefts'),
+        bikeThefts: _.sumBy(crimeStats, 'bikeThefts'),
+    };
+
+    let averageStats = {
+        income: totalStats.income / crimeStats.length,
+        carThefts: totalStats.carThefts / crimeStats.length,
+        bikeThefts: totalStats.bikeThefts / crimeStats.length
+    };
+
+    for (let index = 0; index < crimeStats.length; index++) {
+        //add previously unknown total data back into the array so it doesnt have to be calculated over and over again
+        crimeStats[index].incomeShare = crimeStats[index].income / totalStats.income * 100;
+        crimeStats[index].carTheftShare = crimeStats[index].carThefts / totalStats.carThefts * 100;
+        crimeStats[index].bikeTheftShare = crimeStats[index].bikeThefts / totalStats.bikeThefts * 100;
+    }
+
     new Vue({
         el: '#app',
         data: {
             store: {
                 crimeMode: 'car',
-                crimeStats: crimeStats
+                crimeStats: crimeStats,
+                totalStats: totalStats,
+                averageStats: averageStats
             }
         },
         components: {CrimeMonitor}

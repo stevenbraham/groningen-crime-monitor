@@ -1,16 +1,28 @@
-$primary: #070607;
+$primary: #ED1C24;
+$primary-color: $primary;
+
+$secondary: #000000;
+$secondary-color: $secondary;
+
 $info: #62466B;
+$info-color: $info;
+
 $danger: #FF4365;
+$danger-color: $danger;
+
 $warning: #E1B07E;
+$warning-color: $warning;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
-.hanze-crime-monitor {
+@import "../../node_modules/mdbootstrap/scss/mdb";
+
+.groningen-crime-monitor {
   background: #ffffff !important;
-  font-family: "Neue Helvetica W02", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: Verdana, Arial, sans-serif !important;
 
   .navbar {
     .navbar-brand {
-      background: url("../images/hanze-logo.svg") no-repeat center center;
+      background: url("../images/logo-groningen.svg") no-repeat center center;
       background-size: contain;
       min-width: 5rem;
       min-height: 3rem;
@@ -18,6 +30,30 @@ $warning: #E1B07E;
   }
 
   .crime-table {
+    th {
+      background: $primary;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      .fa {
+        display: none;
+      }
+      &.active {
+        background: $secondary;
+        &.sort-asc {
+          .fa.fa-arrow-up {
+            display: inline;
+          }
+        }
+        &.sort-desc {
+          .fa.fa-arrow-down {
+            display: inline;
+          }
+        }
+      }
+    }
     th, td {
       width: percentage(1/4);
     }
