@@ -1,14 +1,21 @@
 <template>
     <div>
+        <div class="text-center text-muted mb-3">
+            <small>
+                <i>
+                    Deze visualisatie maak gebruikt van cijfers van de gemeente Groningen uit 2017
+                </i>
+            </small>
+        </div>
         <mode-choser></mode-choser>
-        <pie-charts></pie-charts>
+        <charts></charts>
         <crime-table></crime-table>
     </div>
 </template>
 <script type="text/babel">
     import CrimeTable from './CrimeTable.vue';
     import ModeChoser from "./ModeChoser.vue";
-    import PieCharts from "./PieCharts.vue";
+    import Charts from "./Charts.vue";
 
     export default {
         data() {
@@ -17,7 +24,7 @@
             }
         },
         components: {
-            ModeChoser, CrimeTable, PieCharts
+            ModeChoser, CrimeTable, Charts
         }
     }
 </script>

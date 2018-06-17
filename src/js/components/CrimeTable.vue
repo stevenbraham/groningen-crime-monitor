@@ -23,6 +23,10 @@
             </td>
             <td>
                 €{{row.income.toLocaleString("nl-nl", {minimumFractionDigits: 2, maximumFractionDigits: 2})}}
+                <small class="red-text" v-if="row.incomeAboveAverage < 0">
+                    ( {{(Math.abs(row.incomeAboveAverage)).toLocaleString("nl-nl", {minimumFractionDigits: 2, maximumFractionDigits: 2})}}% onder het gemiddelde)
+                </small>
+                <small class="green-text" v-else>( {{(row.incomeAboveAverage).toLocaleString("nl-nl", {minimumFractionDigits: 2, maximumFractionDigits: 2})}}% boven het gemiddelde)</small>
             </td>
             <td v-if="crimeMode == 'car'">
                 {{row.carThefts}}
@@ -30,7 +34,7 @@
             </td>
             <td v-if="crimeMode == 'bike'">
                 {{row.bikeThefts}}
-                <small class="text-muted">{{(row.bikeTheftShare).toLocaleString("nl-nl", {minimumFractionDigits: 2, maximumFractionDigits: 2})}}% %</small>
+                <small class="text-muted">({{(row.bikeTheftShare).toLocaleString("nl-nl", {minimumFractionDigits: 2, maximumFractionDigits: 2})}}% van het totaal)</small>
             </td>
         </tr>
         </tbody>

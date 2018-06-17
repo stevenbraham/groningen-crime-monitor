@@ -61,6 +61,7 @@ function setupVue(crimeStats) {
         crimeStats[index].incomeShare = crimeStats[index].income / totalStats.income * 100;
         crimeStats[index].carTheftShare = crimeStats[index].carThefts / totalStats.carThefts * 100;
         crimeStats[index].bikeTheftShare = crimeStats[index].bikeThefts / totalStats.bikeThefts * 100;
+        crimeStats[index].incomeAboveAverage = (crimeStats[index].income / averageStats.income * 100) - 100
     }
 
     new Vue({

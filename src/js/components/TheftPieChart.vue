@@ -1,8 +1,6 @@
 <script type="text/babel">
-    import Chart from "chart.js";
     import {Pie} from "vue-chartjs";
     import _ from "lodash";
-    import $ from "jquery";
 
     export default {
         extends: Pie,
@@ -40,11 +38,15 @@
                                 data: crimeData,
                                 backgroundColor: colors,
                                 borderColor: 'rgba(256,256,256,1)',
-                                borderWidth: 5
+                                borderWidth: 3.5
                             }
                         ]
                     },
-                    {responsive: true, maintainAspectRatio: false}
+                    {
+                        responsive: true, maintainAspectRatio: false, legend: {
+                        position: 'right'
+                    }
+                    }
                 );
             }
         }
