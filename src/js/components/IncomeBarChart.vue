@@ -31,7 +31,7 @@
                         labels: labels,
                         datasets: [
                             {
-                                label: 'aantal diefstallen',
+                                label: 'jaarinkomen in euro',
                                 data: incomeData,
                                 backgroundColor: "#ED1C24",
                             }

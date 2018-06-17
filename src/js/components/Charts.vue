@@ -30,7 +30,7 @@
                         <h3>
                             Gemiddeld jaarinkomen per regio
                         </h3>
-                        <income-bar-chart height="525"></income-bar-chart>
+                        <income-bar-chart height=525></income-bar-chart>
                     </div>
                 </div>
             </div>
